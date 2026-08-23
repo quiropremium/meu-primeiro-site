@@ -255,6 +255,96 @@
 
   footer strong{ color:var(--ink-muted); }
 
+  /* ===== AVALIAÇÕES ===== */
+  .reviews{
+    margin-top:40px;
+    text-align:left;
+  }
+
+  .reviews-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:16px;
+    gap:12px;
+  }
+
+  .reviews-title{
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:18px;
+    color:var(--white);
+  }
+
+  .reviews-score{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    flex-shrink:0;
+    background:linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--white);
+  }
+
+  .reviews-score i{ color:#ffb020; font-size:11px; }
+
+  .reviews-track{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    padding:4px 2px 14px;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .reviews-track::-webkit-scrollbar{ height:5px; }
+  .reviews-track::-webkit-scrollbar-thumb{ background:rgba(79,227,255,0.25); border-radius:10px; }
+
+  .review-card{
+    scroll-snap-align:start;
+    flex:0 0 240px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:16px 16px 14px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .review-stars{ color:#ffb020; font-size:12px; letter-spacing:2px; }
+
+  .review-text{
+    font-size:13px;
+    line-height:1.5;
+    color:#e6f6fb;
+    flex:1;
+  }
+
+  .review-author{
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--ink-muted);
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .review-author i{ color:var(--cyan-bright); font-size:11px; }
+
+  .reviews-source{
+    margin-top:10px;
+    font-size:11px;
+    color:var(--ink-faint);
+    text-align:center;
+  }
+
+  .reviews-source a{ color:var(--cyan-bright); text-decoration:none; font-weight:600; }
+
   @media (prefers-reduced-motion: reduce){
     .logo-halo, .logo-ring{ animation:none; }
     .btn-link{ transition:none; }
@@ -306,7 +396,7 @@
   <nav class="links-container">
     <a href="https://wa.me/5511911297394" class="btn-link primary" target="_blank" rel="noopener">
       <span class="icon-badge"><i class="fa-brands fa-whatsapp"></i></span>
-      <span class="label">Dúvidas &amp; Parcerias (Revendedores)</span>
+      <span class="label">Dúvidas &amp; Parcerias | Afiliados (Revendedores)</span>
       <i class="fa-solid fa-chevron-right chevron"></i>
     </a>
 
@@ -328,6 +418,47 @@
       <i class="fa-solid fa-chevron-right chevron"></i>
     </a>
   </nav>
+
+  <section class="reviews" aria-label="Avaliações de clientes">
+    <div class="reviews-heading">
+      <span class="reviews-title">O que dizem nossos clientes</span>
+      <span class="reviews-score"><i class="fa-solid fa-star"></i> 5.0 · avaliações verificadas</span>
+    </div>
+
+    <div class="reviews-track">
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Os produtos chegaram bem rápido, com a qualidade que só a Quiro Premium tem! Já usava os produtos e continuarei usando!!"</p>
+        <div class="review-author"><i class="fa-solid fa-circle-check"></i> j7dzknnatg — Shopee</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Produto de boa qualidade, costuras firmes, bom velcro. Embalado adequadamente e chegou dentro do prazo. Serviu ao propósito, aliviou muito minhas dores."</p>
+        <div class="review-author"><i class="fa-solid fa-circle-check"></i> karinamurback — Shopee</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Estou amando, outro nível de travesseiro de corpo! Valeu cada centavo 🎉"</p>
+        <div class="review-author"><i class="fa-solid fa-circle-check"></i> nanasp2001 — Shopee</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Dor: o uso ajudou a reduzir as dores, muito bom. Qualidade: ótimo material. Tamanho: foi ideal."</p>
+        <div class="review-author"><i class="fa-solid fa-circle-check"></i> iesa1115 — Shopee</div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"O molde chegou rápido, super bem embalado, sem defeitos. Tamanho perfeito, segui as orientações do anúncio. Vale a pena o custo-benefício."</p>
+        <div class="review-author"><i class="fa-solid fa-circle-check"></i> Comprador verificado — Shopee</div>
+      </article>
+    </div>
+
+    <p class="reviews-source">Avaliações reais na <a href="https://shopee.com.br/quiropremium" target="_blank" rel="noopener">nossa loja Shopee</a></p>
+  </section>
 
   <footer>
     <strong>Quiro Premium</strong> — saúde para sua coluna
