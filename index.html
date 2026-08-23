@@ -1,79 +1,339 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiro Premium | Saúde para sua coluna</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiro Premium | Saúde para sua coluna</title>
+<meta name="description" content="Quiro Premium — saúde para sua coluna. Agende sua consulta, siga nosso Instagram e encontre nosso endereço.">
 
-  <style>
-    /* RESET & VARIÁVEIS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    :root {
-      --bg-color: #f4f8fa;
-      --card-bg: #ffffff;
-      --primary-blue: #00aeeef0; /* Cor azul inspirada na marca */
-      --text-dark: #1f2937;
-      --text-muted: #6b7280;
-      --hover-color: #0093c4;
-    }
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2301202b'/%3E%3Cg fill='none' stroke='%2338e5ff' stroke-width='4' stroke-linecap='round'%3E%3Crect x='24' y='10' width='16' height='9' rx='4'/%3E%3Crect x='24' y='22' width='16' height='9' rx='4'/%3E%3Crect x='24' y='34' width='16' height='9' rx='4'/%3E%3Crect x='24' y='46' width='16' height='9' rx='4'/%3E%3C/g%3E%3C/svg%3E">
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-dark);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 30px 15px;
-    }
+<style>
+  :root{
+    --navy-deep:#01141c;
+    --navy-mid:#012a38;
+    --navy-card:#062836;
+    --cyan:#00aeef;
+    --cyan-bright:#4fe3ff;
+    --white:#ffffff;
+    --ink-muted:#9fd0e0;
+    --ink-faint:#5f8a99;
+    --line:rgba(79,227,255,0.16);
+    --radius-lg:22px;
+    --radius-md:16px;
+  }
 
-    /* CONTAINER PRINCIPAL */
-    .container {
-      width: 100%;
-      max-width: 480px;
-      text-align: center;
-    }
+  *{ margin:0; padding:0; box-sizing:border-box; }
 
-    /* PERFIL / LOGO */
-    .profile-header {
-      margin-bottom: 24px;
-    }
+  html{ scroll-behavior:smooth; }
 
-    .avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: var(--primary-blue);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto 16px auto;
-      box-shadow: 0 4px 14px rgba(0, 174, 238, 0.3);
-      font-size: 40px;
-    }
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--white);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:56px 18px 40px;
+    position:relative;
+    overflow-x:hidden;
+    background:
+      radial-gradient(120% 60% at 50% -10%, rgba(0,174,239,0.35) 0%, rgba(0,174,239,0) 60%),
+      radial-gradient(90% 50% at 85% 100%, rgba(56,229,255,0.18) 0%, rgba(56,229,255,0) 55%),
+      linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 55%, #013244 100%);
+  }
 
-    .title {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
+  /* textura de ondas — camada fixa atrás de tudo */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:0.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cg fill='none' stroke='%2300aeef' stroke-opacity='0.12' stroke-width='1.4'%3E%3Cpath d='M-50 80 C 150 20, 250 160, 450 90 S 750 20, 950 100'/%3E%3Cpath d='M-50 180 C 150 120, 250 260, 450 190 S 750 120, 950 200'/%3E%3Cpath d='M-50 280 C 150 220, 250 360, 450 290 S 750 220, 950 300'/%3E%3Cpath d='M-50 380 C 150 320, 250 460, 450 390 S 750 320, 950 400'/%3E%3Cpath d='M-50 480 C 150 420, 250 560, 450 490 S 750 420, 950 500'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:600px 600px;
+  }
 
-    .subtitle {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--primary-blue);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-    }
+  /* grão sutil para sensação premium/impressa */
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:0.05;
+    mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .container{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:460px;
+    text-align:center;
+  }
+
+  /* ===== LOGO / CABEÇALHO ===== */
+  .brand-header{
+    margin-bottom:34px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .logo-wrap{
+    position:relative;
+    width:118px;
+    height:118px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .logo-halo{
+    position:absolute;
+    inset:-14px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(56,229,255,0.35) 0%, rgba(56,229,255,0) 70%);
+    filter:blur(4px);
+    animation:pulse 3.4s ease-in-out infinite;
+  }
+
+  /* arco tracejado — parcial, flutuando fora do círculo, igual ao original */
+  .logo-accent-arc{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:150px;
+    height:150px;
+    transform:translate(-50%,-50%) rotate(0deg);
+    animation:spin-arc 26s linear infinite;
+    transform-origin:50% 50%;
+    pointer-events:none;
+  }
+
+  .logo-circle{
+    position:relative;
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    background:linear-gradient(150deg, #023142 0%, #01131a 100%);
+    border:1.5px solid rgba(255,255,255,0.85);
+    box-shadow:
+      0 0 0 6px rgba(0,20,28,0.6),
+      0 12px 30px rgba(0,0,0,0.45),
+      inset 0 0 18px rgba(0,174,239,0.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1;
+  }
+
+  .logo-circle svg{ width:46px; height:46px; }
+
+  @keyframes spin-arc{
+    from{ transform:translate(-50%,-50%) rotate(0deg); }
+    to{ transform:translate(-50%,-50%) rotate(360deg); }
+  }
+  @keyframes pulse{ 0%,100%{ opacity:0.55; transform:scale(1);} 50%{ opacity:0.9; transform:scale(1.08);} }
+
+  .wordmark{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size:26px;
+    letter-spacing:0.3px;
+    background:linear-gradient(90deg, #ffffff 0%, #bdeeff 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .tagline{
+    margin-top:6px;
+    font-size:11.5px;
+    font-weight:600;
+    letter-spacing:2.2px;
+    text-transform:uppercase;
+    color:var(--cyan-bright);
+  }
+
+  .divider{
+    width:64px;
+    height:3px;
+    margin:18px auto 0;
+    border-radius:3px;
+    background:linear-gradient(90deg, transparent, var(--cyan-bright), transparent);
+  }
+
+  /* ===== LINKS ===== */
+  .links-container{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .btn-link{
+    position:relative;
+    background:linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--line);
+    color:var(--white);
+    padding:16px 18px;
+    border-radius:var(--radius-md);
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-align:left;
+    transition:transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  }
+
+  .btn-link .icon-badge{
+    flex-shrink:0;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(140deg, var(--cyan) 0%, #0077a8 100%);
+    box-shadow:0 4px 14px rgba(0,174,239,0.35);
+    font-size:17px;
+    color:#fff;
+  }
+
+  .btn-link span.label{ flex:1; }
+
+  .btn-link .chevron{
+    color:var(--ink-faint);
+    font-size:13px;
+    transition:transform 0.22s ease, color 0.22s ease;
+  }
+
+  .btn-link:hover,
+  .btn-link:focus-visible{
+    transform:translateY(-3px);
+    border-color:rgba(79,227,255,0.55);
+    background:linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%);
+    box-shadow:0 14px 30px rgba(0,10,15,0.4), 0 0 0 1px rgba(79,227,255,0.15);
+  }
+
+  .btn-link:hover .chevron,
+  .btn-link:focus-visible .chevron{
+    transform:translateX(3px);
+    color:var(--cyan-bright);
+  }
+
+  .btn-link:focus-visible{
+    outline:2px solid var(--cyan-bright);
+    outline-offset:3px;
+  }
+
+  /* destaque no primeiro link (ação principal) */
+  .btn-link.primary{
+    border-color:rgba(79,227,255,0.45);
+    background:linear-gradient(180deg, rgba(0,174,239,0.16) 0%, rgba(0,174,239,0.04) 100%);
+  }
+
+  footer{
+    margin-top:36px;
+    font-size:12px;
+    color:var(--ink-faint);
+    letter-spacing:0.3px;
+  }
+
+  footer strong{ color:var(--ink-muted); }
+
+  @media (prefers-reduced-motion: reduce){
+    .logo-halo, .logo-ring{ animation:none; }
+    .btn-link{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="brand-header">
+    <div class="logo-wrap">
+      <div class="logo-halo"></div>
+
+      <!-- arco tracejado parcial, girando -->
+      <svg class="logo-accent-arc" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70,6 A64,64 0 0,1 130,92" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 7"/>
+      </svg>
+
+      <div class="logo-circle">
+        <!-- logo: coluna vertebral estilizada, vazada — 3 vértebras com processos laterais -->
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <!-- vértebra 1 -->
+            <rect x="19" y="16" width="26" height="9" rx="4.5"/>
+            <line x1="12" y1="20.5" x2="19" y2="20.5"/>
+            <line x1="45" y1="20.5" x2="52" y2="20.5"/>
+            <!-- vértebra 2 -->
+            <rect x="19" y="28" width="26" height="9" rx="4.5"/>
+            <line x1="12" y1="32.5" x2="19" y2="32.5"/>
+            <line x1="45" y1="32.5" x2="52" y2="32.5"/>
+            <!-- vértebra 3 -->
+            <rect x="19" y="40" width="26" height="9" rx="4.5"/>
+            <line x1="12" y1="44.5" x2="19" y2="44.5"/>
+            <line x1="45" y1="44.5" x2="52" y2="44.5"/>
+            <!-- conectores -->
+            <line x1="32" y1="25" x2="32" y2="28"/>
+            <line x1="32" y1="37" x2="32" y2="40"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <h1 class="wordmark">Quiro Premium</h1>
+    <p class="tagline">saúde para sua coluna</p>
+    <div class="divider"></div>
+  </div>
+
+  <nav class="links-container">
+    <a href="https://wa.me/5511911297394" class="btn-link primary" target="_blank" rel="noopener">
+      <span class="icon-badge"><i class="fa-brands fa-whatsapp"></i></span>
+      <span class="label">Dúvidas &amp; Parcerias (Revendedores)</span>
+      <i class="fa-solid fa-chevron-right chevron"></i>
+    </a>
+
+    <a href="https://www.instagram.com/quiropremium" class="btn-link" target="_blank" rel="noopener">
+      <span class="icon-badge"><i class="fa-brands fa-instagram"></i></span>
+      <span class="label">Nosso Instagram</span>
+      <i class="fa-solid fa-chevron-right chevron"></i>
+    </a>
+
+    <a href="https://www.shopee.com.br/quiropremium" class="btn-link" target="_blank" rel="noopener">
+      <span class="icon-badge"><i class="fa-solid fa-bag-shopping"></i></span>
+      <span class="label">Compre na Shopee</span>
+      <i class="fa-solid fa-chevron-right chevron"></i>
+    </a>
+
+    <a href="https://lista.mercadolivre.com.br/_CustId_1913359916" class="btn-link" target="_blank" rel="noopener">
+      <span class="icon-badge"><i class="fa-solid fa-cart-shopping"></i></span>
+      <span class="label">Compre no Mercado Livre</span>
+      <i class="fa-solid fa-chevron-right chevron"></i>
+    </a>
+  </nav>
+
+  <footer>
+    <strong>Quiro Premium</strong> — saúde para sua coluna
+  </footer>
+
+</div>
+
+</body>
+</html>
